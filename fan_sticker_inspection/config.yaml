@@ -1,0 +1,23 @@
+project_name: fan_sticker_inspection
+dataset:
+  path: dataset
+  classes:
+    - STICKER_PRESENT
+    - STICKER_MISSING
+
+training:
+  model: yolo11n-cls.pt
+  epochs: 50
+  imgsz: 320
+  batch: 16
+  workers: 0
+  device: '' # blank for auto
+
+inference:
+  confidence_threshold: 0.70
+
+  roi:
+    x: 0.35
+    y: 0.35
+    width: 0.30
+    height: 0.30
